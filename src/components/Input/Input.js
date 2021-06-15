@@ -1,18 +1,19 @@
-import React from 'react';
+import React from "react";
 import { useLocation } from "react-router-dom";
 
-function Input({ id,
-                 name,
-                 label,
-                 type,
-                 required,
-                 autoComplete,
-                 placeholder,
-                 minLength,
-                 maxLength,
-                 value,
-                 error }) {
-
+function Input({
+  id,
+  name,
+  label,
+  type,
+  required,
+  autoComplete,
+  placeholder,
+  minLength,
+  maxLength,
+  value,
+  error,
+}) {
   const location = useLocation();
 
   const isProfilePage = location.pathname === "/profile";
@@ -27,7 +28,12 @@ function Input({ id,
             error ? "input__container_error" : ""
           }`}
         >
-          <label className="input__label input__label_type_profile" htmlFor={name}>{label}</label>
+          <label
+            className="input__label input__label_type_profile"
+            htmlFor={name}
+          >
+            {label}
+          </label>
           <input
             className={`input input_type_profile ${
               error ? "input__error input__error_type_profile" : ""
@@ -52,7 +58,9 @@ function Input({ id,
             error ? "input__container_error" : ""
           }`}
         >
-          <label className="input__label input__label_type_auth" htmlFor={name}>{label}</label>
+          <label className="input__label input__label_type_auth" htmlFor={name}>
+            {label}
+          </label>
           <input
             className={`input input_type_auth ${
               error ? "input__error input__error_type_auth" : ""
@@ -77,7 +85,9 @@ function Input({ id,
             error ? "input__container_error" : ""
           }`}
         >
-          <label className="input__label input__label_type_auth" htmlFor={name}>{label}</label>
+          <label className="input__label input__label_type_auth" htmlFor={name}>
+            {label}
+          </label>
           <input
             className={`input input_type_auth ${
               error ? "input__error input__error_type_auth" : ""
@@ -97,7 +107,7 @@ function Input({ id,
         </div>
       )}
     </>
-  )
+  );
 }
 
 export default Input;

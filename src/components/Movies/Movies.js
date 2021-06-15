@@ -1,27 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import Header from '../Header/Header';
+import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
-import Footer from '../Footer/Footer';
+import Footer from "../Footer/Footer";
 
 function Movies() {
   return (
     <>
-    <Header
-      theme={"light"}
-      component={Movies}
-      loggedIn={true}
-    />
+      <Header theme={"light"} component={Movies} loggedIn={true} />
       <section className="movies">
         <SearchForm />
-        <MoviesCardList
-          moreButton={true}
-        />
+        <MoviesCardList moreButton={true} />
       </section>
-    <Footer />
+      <Footer />
     </>
-  )
+  );
 }
 
 export default Movies;

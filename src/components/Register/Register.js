@@ -1,25 +1,22 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
-import Greeting from '../Greeting/Greeting';
-import Form from '../Form/Form';
-import Input from '../Input/Input';
-import AuthFormButton from '../AuthFormButton/AuthFormButton';
+import Greeting from "../Greeting/Greeting";
+import Form from "../Form/Form";
+import Input from "../Input/Input";
+import AuthFormButton from "../AuthFormButton/AuthFormButton";
 
 import logo from "../../images/logo/logo.svg";
 
 function Register() {
-
   return (
     <section className="register">
       <Link to="/" className="register__link">
         <img src={logo} alt="логотип" className="register__logo"></img>
       </Link>
-      <Greeting
-        greeting="Добро пожаловать!"
-      />
+      <Greeting greeting="Добро пожаловать!" />
       <Form name="register" noValidate>
-      <Input
+        <Input
           formStyle="register"
           id="name"
           name="name"
@@ -63,7 +60,7 @@ function Register() {
         <AuthFormButton />
       </Form>
     </section>
-  )
+  );
 }
 
 export default Register;

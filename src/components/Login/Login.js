@@ -1,23 +1,20 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
-import Greeting from '../Greeting/Greeting';
-import Form from '../Form/Form';
-import Input from '../Input/Input';
-import AuthFormButton from '../AuthFormButton/AuthFormButton';
+import Greeting from "../Greeting/Greeting";
+import Form from "../Form/Form";
+import Input from "../Input/Input";
+import AuthFormButton from "../AuthFormButton/AuthFormButton";
 
 import logo from "../../images/logo/logo.svg";
 
 function Login() {
-
   return (
     <section className="login">
       <Link to="/" className="login__link">
         <img src={logo} alt="логотип" className="login__logo"></img>
       </Link>
-      <Greeting
-        greeting="Рады видеть!"
-      />
+      <Greeting greeting="Рады видеть!" />
       <Form name="login" noValidate>
         <Input
           formStyle="login"
@@ -49,7 +46,7 @@ function Login() {
         <AuthFormButton />
       </Form>
     </section>
-  )
+  );
 }
 
 export default Login;

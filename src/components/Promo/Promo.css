@@ -12,7 +12,7 @@
 .promo__container {
   box-sizing: border-box;
   max-width: 640px;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -53,19 +53,19 @@
   border-radius: 3px;
   width: 129px;
   height: 36px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   background-color: transparent;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   padding: 0;
 }
 
 .promo__button:hover {
-  background-color: #2BE080;
+  background-color: #2be080;
   border: none;
   color: #000000;
   cursor: pointer;

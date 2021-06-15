@@ -1,16 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import SectionTitle from '../SectionTitle/SectionTitle';
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 function Techs() {
   return (
     <section className="techs">
-      <SectionTitle
-        text="Технологии"
-      />
+      <SectionTitle text="Технологии" />
       <div className="techs__container">
         <div className="techs__title">7 технологий</div>
-        <div className="techs__subtitle">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</div>
+        <div className="techs__subtitle">
+          На курсе веб-разработки мы освоили технологии, которые применили в
+          дипломном проекте.
+        </div>
       </div>
       <ul className="techs__list">
         <li className="techs__list_item">HTML</li>
@@ -22,7 +23,7 @@ function Techs() {
         <li className="techs__list_item">mongoDB</li>
       </ul>
     </section>
-  )
+  );
 }
 
 export default Techs;

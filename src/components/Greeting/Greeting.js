@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 
 function Greeting(props) {
   return (
@@ -8,7 +7,7 @@ function Greeting(props) {
         <h1 className="greeting__title">{props.greeting}</h1>
       </div>
     </section>
-  )
+  );
 }
 
 export default Greeting;

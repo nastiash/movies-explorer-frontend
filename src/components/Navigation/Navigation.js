@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Navigation() {
@@ -23,7 +23,7 @@ function Navigation() {
         </li>
       </ul>
     </nav>
-  )
+  );
 }
 
 export default Navigation;

@@ -9,7 +9,7 @@
 }
 
 .profile__button {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   outline: none;
   border: none;
   font-style: normal;
@@ -20,7 +20,7 @@
 }
 
 .profile__button_type_logout {
-  color: #FF3055;
+  color: #ff3055;
 }
 
 .profile__button:hover {

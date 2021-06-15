@@ -1,27 +1,22 @@
-import React from 'react';
+import React from "react";
 //import { useState, useEffect } from "react";
 
-import Header from '../Header/Header';
+import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
-import Footer from '../Footer/Footer';
+import Footer from "../Footer/Footer";
 
 function SavedMovies() {
-
   return (
     <>
-    <Header
-      loggedIn={true}
-    />
+      <Header loggedIn={true} />
       <section className="saved-movies">
         <SearchForm />
-        <MoviesCardList
-          moreButton={false}
-        />
+        <MoviesCardList moreButton={false} />
       </section>
-    <Footer />
+      <Footer />
     </>
-  )
+  );
 }
 
 export default SavedMovies;

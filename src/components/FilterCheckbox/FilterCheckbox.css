@@ -1,0 +1,42 @@
+.check-box {
+  display: flex;
+  padding: 26px 0 44px;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.check-box__icon {
+  width: 36px;
+  height: 20px;
+  margin-right: 14px;
+}
+
+.check-box__icon:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.check-box__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #000000;
+}
+
+@media screen and (max-width: 1000px) {
+  .check-box {
+    padding: 26px 0 51px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .check-box {
+    padding: 30px 0 63px;
+  }
+  .check-box__title {
+    font-size: 11px;
+    line-height: 18px;
+  }
+}

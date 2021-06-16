@@ -81,9 +81,6 @@
   padding-left: 16px;
 }
 
-.input__error_type_auth {
-}
-
 @media screen and (max-width: 1000px) {
   .profile {
     padding-top: 236px;

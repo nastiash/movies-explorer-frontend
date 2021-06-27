@@ -1,0 +1,74 @@
+.button__container_type_login {
+  margin-top: 185px;
+}
+
+.button__container_type_register {
+  margin-top: 100px;
+}
+
+.button {
+  width: 100%;
+  height: 45px;
+  background: #3456f3;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.button__comment {
+  font-style: 400;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #a0a0a0;
+  padding-top: 3px;
+}
+
+.button__link {
+  text-decoration: none;
+  color: #3456f3;
+}
+
+.button__link:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .button__container_type_register {
+    margin-top: 96px;
+  }
+  .button__container_type_login {
+    margin-top: 182px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .button__container_type_register {
+    margin-top: 185px;
+  }
+  .button__container_type_login {
+    margin-top: 272px;
+  }
+  .button__comment {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

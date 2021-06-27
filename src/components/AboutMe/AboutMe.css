@@ -1,0 +1,205 @@
+.about_me {
+  padding: 110px 70px 90px;
+  margin: 0 auto;
+}
+
+.about-me__container {
+  display: flex;
+  align-content: stretch;
+  justify-content: space-between;
+}
+
+.about-me__info-container {
+  max-width: 600px;
+}
+
+.about-me__name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+  margin: 0;
+  padding: 65px 0 18px;
+}
+
+.about-me__about {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  mix-blend-mode: normal;
+  margin: 0;
+  padding: 0 0 26px;
+}
+
+.about-me__article {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+  padding: 0 0 100px;
+}
+
+.about-me__photo {
+  border-radius: 10px;
+  width: 270px;
+  height: 327px;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 33px;
+}
+
+.about-me__social-list {
+  margin: 0;
+  padding: 0 0 100px;
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+}
+
+.about-me__social-link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0 20px 0 0;
+}
+
+.about-me__social-link:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.about-me__portfolio-title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  color: #a0a0a0;
+  mix-blend-mode: normal;
+  padding: 0 0 30px;
+  margin: 0;
+}
+
+.about-me__portfolio-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-me__portfolio-link-item {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: -0.04em;
+  color: #000000;
+  padding: 20px 0;
+  border-bottom: 1px solid #e8e8e8;
+  width: 100%;
+}
+
+.about-me__portfolio-link-item:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.about-me__portfolio-link {
+  text-decoration: none;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-me__portfolio-icon {
+  height: 18px;
+  width: 18px;
+  padding: 5px 5px 0 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .about_me {
+    padding: 110px 50px 53px;
+  }
+  .about-me__name {
+    font-size: 40px;
+    line-height: 40px;
+    padding: 67px 0 15px;
+  }
+  .about-me__about {
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 20px;
+  }
+  .about-me__article {
+    font-size: 12px;
+    line-height: 18px;
+    max-width: 364px;
+    padding-bottom: 88px;
+  }
+  .about-me__photo {
+    width: 255px;
+    height: 307px;
+  }
+  .about-me__social-list {
+    padding: 0 0 90px;
+  }
+  .about-me__portfolio-link-item {
+    font-size: 28px;
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .about_me {
+    padding: 120px 14px 53px;
+    margin: 0 auto;
+  }
+  .about-me__container {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 60px;
+  }
+  .about-me__info-container {
+    max-width: 100%;
+  }
+  .about-me__photo {
+    width: 292px;
+    height: 352px;
+  }
+  .about-me__name {
+    font-size: 30px;
+    line-height: 36px;
+    padding: 8px 0 18px;
+  }
+  .about-me__article {
+    font-size: 11px;
+    line-height: 16px;
+    max-width: 100%;
+    padding-bottom: 40px;
+  }
+  .about-me__social-link {
+    padding: 0 26px 0 0;
+  }
+  .about-me__social-list {
+    padding: 0 0 69px;
+  }
+  .about-me__portfolio-title {
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 20px;
+  }
+  .about-me__portfolio-link-item {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 20px 0;
+  }
+  .about-me__portfolio-icon {
+    height: 10px;
+    width: 10px;
+    padding: 0 5px 0 0;
+  }
+}

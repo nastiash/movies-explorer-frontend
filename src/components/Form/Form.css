@@ -1,0 +1,25 @@
+.form {
+  max-width: 396px;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.form_type_auth {
+  max-width: 396px;
+}
+
+.form_type_profile {
+  max-width: 410px;
+}
+
+@media screen and (max-width: 600px) {
+  .form_type_profile {
+    max-width: 260px;
+  }
+  .form_type_auth {
+    max-width: 260px;
+  }
+}

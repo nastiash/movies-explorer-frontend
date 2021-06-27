@@ -1,0 +1,87 @@
+.card {
+  width: 100%;
+}
+
+.card:nth-of-type(4) {
+  padding-right: 0px;
+}
+
+.card__container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.card__image-link {
+  width: 100%;
+}
+
+.card__image {
+  padding-bottom: 14px;
+  width: 100%;
+}
+
+.card__caption-container {
+  display: flex;
+  align-items: top;
+  padding: 13px 0 0;
+}
+
+.card__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+  margin: 0;
+}
+
+.card__button {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.card__button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.card__duration {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  color: #a0a0a0;
+  border-top: 1px solid #e8e8e8;
+  padding: 6px 0 38px;
+  margin: 14px 0 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__caption-container {
+    padding: 0;
+    justify-content: space-between;
+  }
+  .card__duration {
+    margin: 20px 0 0;
+    padding-bottom: 28px;
+  }
+  .card__container {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card__image {
+    padding-bottom: 12px;
+  }
+  .card__duration {
+    margin: 11px 0 0;
+    padding-bottom: 34px;
+  }
+}

@@ -1,9 +1,9 @@
 .button__container_type_login {
-  margin-top: 185px;
+  margin-top: 15px;
 }
 
 .button__container_type_register {
-  margin-top: 100px;
+  margin-top: 15px;
 }
 
 .button {
@@ -25,6 +25,11 @@
 .button:hover {
   opacity: 0.6;
   cursor: pointer;
+}
+
+.button_disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .button__comment {

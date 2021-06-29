@@ -1,0 +1,18 @@
+.tooltip {
+  display: hidden;
+  margin-top: 85px;
+}
+
+.tooltip__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tooltip__message {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #FF3055;
+}

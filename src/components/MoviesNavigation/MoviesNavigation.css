@@ -60,6 +60,7 @@
   width: 100px;
   height: 32px;
   margin-left: 30px;
+  background-color: #ffffff;
 }
 
 .movies-navigation__list-item_type_profile {
@@ -85,6 +86,11 @@
 
 .movies-nav__link_theme_light {
   color: #ffffff;
+  text-decoration: none;
+}
+
+.movies-nav__link_place_burger {
+  color: #000000;
 }
 
 .movies-nav__close-button {

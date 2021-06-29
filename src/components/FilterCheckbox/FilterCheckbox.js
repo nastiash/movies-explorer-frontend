@@ -1,16 +1,14 @@
 import React from "react";
 
-import checkboxOn from "../../images/filterCheckBox/checkbox_enable.png";
-//import checkboxOff from "../../images/filterCheckBox/checkbox_disable.png";
+import Switch from "../Switch/Switch";
 
-function FilterCheckBox() {
+function FilterCheckBox({ isOn, handleToggle }) {
   return (
     <div className="check-box">
-      <img
-        className="check-box__icon"
-        src={checkboxOn}
-        alt="фильтр фильмов"
-      ></img>
+      <Switch
+        isOn={isOn}
+        handleToggle={handleToggle}
+      />
       <span className="check-box__title">Короткометражки</span>
     </div>
   );

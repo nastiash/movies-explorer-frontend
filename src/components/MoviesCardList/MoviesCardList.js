@@ -1,46 +1,40 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
 import MoviesCard from "../MoviesCard/MoviesCard";
+import * as utils from "../../utils/utils";
 
-function MoviesCardList(props) {
-  const location = useLocation();
+function MoviesCardList({ movies, moreButton,  onMoreButton, onMovieClick, searchError}) {
+  console.log(movies);
 
-  const isSavedMoviesPage = location.pathname === "/saved-movies";
+  const moviesVisible = movies.length > 0;
 
   return (
     <section className="cards">
-      {isSavedMoviesPage ? (
-        <ul className="cards__list">
-          <MoviesCard isSaved={true} />
-          <MoviesCard isSaved={true} />
-          <MoviesCard isSaved={true} />
-        </ul>
-      ) : (
-        <ul className="cards__list">
-          <MoviesCard isSaved={true} />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard isSaved={true} />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard isSaved={true} />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
+      {!moviesVisible && <p className="cards__message">{searchError}</p>}
+
+      {moviesVisible && (
+      <ul className="cards__list">
+          {movies.map((movie) => (
+            <MoviesCard
+              key={utils.getMovieKey(movie)}
+              movie={movie}
+              onMovieClick={onMovieClick}
+            />
+          ))}
         </ul>
       )}
+      {moreButton && (
       <div className="cards__button-container">
-        {props.moreButton && (
-          <button className="cards__more-button">Ещё</button>
+        {moreButton && (
+          <button
+            className="cards__more-button"
+            onClick={onMoreButton}
+          >
+            Ещё
+          </button>
         )}
       </div>
+      )}
     </section>
   );
 }

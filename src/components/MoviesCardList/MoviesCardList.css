@@ -30,7 +30,23 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 1000px) {
+.cards__message {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #FF3055;
+}
+
+@media screen and (max-width: 1260px) {
+  .cards__list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
   .cards {
     padding: 80px 30px 50px;
   }

@@ -8,15 +8,16 @@ import AboutMe from "../AboutMe/AboutMe";
 import Footer from "../Footer/Footer";
 
 function Main() {
+
   return (
     <>
-      <Header theme={"dark"} component={Main} />
-      <main className="main">
-        <Promo />
-        <AboutProject />
-        <Techs />
-        <AboutMe />
-      </main>
+      <Header theme={"dark"} />
+        <main className="main">
+          <Promo />
+          <AboutProject />
+          <Techs />
+          <AboutMe />
+        </main>
       <Footer />
     </>
   );

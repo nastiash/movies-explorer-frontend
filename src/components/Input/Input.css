@@ -81,6 +81,15 @@
   padding-left: 16px;
 }
 
+.input__error-message {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FF3055;
+  padding-top: 5px;
+}
+
 @media screen and (max-width: 1000px) {
   .profile {
     padding-top: 236px;

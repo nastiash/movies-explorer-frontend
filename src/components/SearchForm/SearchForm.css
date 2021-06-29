@@ -48,6 +48,15 @@
   cursor: pointer;
 }
 
+.search__error {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #FF3055;
+}
+
 @media screen and (max-width: 1000px) {
   .search {
     padding: 70px 30px 0;

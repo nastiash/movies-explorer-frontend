@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext, useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import Header from "../Header/Header";
 import Greeting from "../Greeting/Greeting";
@@ -10,7 +10,6 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useValidation } from "../../utils/formValidation";
 
 function Profile({ onSignOut, onUpdate }, loggedIn) {
-  const [isSubmitButtonActive, setSubmitButtonActive] = useState(false);
 
   const currentUser = React.useContext(CurrentUserContext);
 

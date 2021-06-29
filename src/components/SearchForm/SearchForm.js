@@ -37,6 +37,7 @@ function SearchForm({ onSubmit, isOn, handleToggle }) {
         </div>
         <FilterCheckBox isOn={isOn} handleToggle={handleToggle} />
       </form>
+      {error && <span className="search__error">{error}</span>}
     </section>
   );
 }

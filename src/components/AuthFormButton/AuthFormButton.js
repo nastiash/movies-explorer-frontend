@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 function AuthFormButton({ isValid }) {
   const location = useLocation();
@@ -22,10 +22,10 @@ function AuthFormButton({ isValid }) {
           </button>
           <p className="button__comment">
             Уже зарегистрированы?
-            <a className="button__link" href="/signin">
+            <Link to="/signin" className="button__link">
               {" "}
               Войти
-            </a>
+            </Link>
           </p>
         </div>
       )}
@@ -42,10 +42,10 @@ function AuthFormButton({ isValid }) {
           </button>
           <p className="button__comment">
             Еще не зарегистрированы?
-            <a className="button__link" href="/signup">
+            <Link to="/signup" className="button__link">
               {" "}
               Регистрация
-            </a>
+            </Link>
           </p>
         </div>
       )}

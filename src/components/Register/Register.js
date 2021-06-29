@@ -7,7 +7,7 @@ import Input from "../Input/Input";
 import AuthFormButton from "../AuthFormButton/AuthFormButton";
 import ToolTip from "../ToolTip/ToolTip";
 
-import { useValidation } from '../../utils/formValidation';
+import { useValidation } from "../../utils/formValidation";
 
 import logo from "../../images/logo/logo.svg";
 
@@ -25,15 +25,14 @@ function Register({ onRegister, isTooltipOpen, message }) {
       <Link to="/" className="register__link">
         <img src={logo} alt="логотип" className="register__logo"></img>
       </Link>
-      <Greeting greeting="Добро пожаловать!"
-        loggedIn={loggedIn}
-      />
-      <Form name="register"
+      <Greeting greeting="Добро пожаловать!" loggedIn={loggedIn} />
+      <Form
+        name="register"
         onSubmit={handleSubmit}
         noValidate
         isOpen={isTooltipOpen}
         message={message}
-        >
+      >
         <Input
           formStyle="register"
           id="name"
@@ -45,7 +44,7 @@ function Register({ onRegister, isTooltipOpen, message }) {
           placeholder=""
           minLength="2"
           maxLength="30"
-          regexp='[a-zA-Z -]{2,30}'
+          regexp="[a-zA-Z -]{2,30}"
           value={"" || values.name}
           error={errors.name}
           onChange={handleChange}
@@ -79,13 +78,8 @@ function Register({ onRegister, isTooltipOpen, message }) {
           error={errors.password}
           onChange={handleChange}
         />
-        <ToolTip
-          isOpen={isTooltipOpen}
-          message={message}
-        />
-        <AuthFormButton
-          isValid={!isValid}
-        />
+        <ToolTip isOpen={isTooltipOpen} message={message} />
+        <AuthFormButton isValid={!isValid} />
       </Form>
     </section>
   );

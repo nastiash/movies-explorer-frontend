@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, useHistory, useLocation } from "react-router-dom";
 
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 import Main from "../Main/Main";
 import Movies from "../Movies/Movies";
@@ -31,20 +31,19 @@ function App() {
   const location = useLocation();
   const path = location.pathname;
 
-
   const handleLogin = (email, password) => {
     mainApi
       .authorize(email, password)
       .then((res) => {
-        localStorage.setItem('token', res.message);
+        localStorage.setItem("token", res.message);
         setLoggedIn(true);
-        history.push('/movies');
+        history.push("/movies");
       })
       .catch((err) => {
         setToolTipOpen(true);
         setMessage(utils.getErrors(err));
         console.log(err);
-      })
+      });
   };
 
   function handleRegister(name, email, password) {
@@ -207,9 +206,11 @@ function App() {
     if (allMovies) {
       console.log(allMovies);
       setMovies(utils.checkSavedMovies(allMovies, savedMovies));
-      setSearchError("Фильсы не найдены");
+      setSearchError("Фильмы не найдены");
     } else {
-      setSearchError("");
+      setSearchError(
+        "Начните поиск - введите название фильма в строку поиска!"
+      );
       setMovies([]);
     }
   }, [savedMovies]);
@@ -219,9 +220,7 @@ function App() {
       <div className="page">
         <Switch>
           <Route exact path="/">
-            <Main
-              loggedIn={loggedIn}
-            />
+            <Main loggedIn={loggedIn} />
           </Route>
           <ProtectedRoute
             path="/movies"
@@ -265,7 +264,7 @@ function App() {
               onLogin={handleLogin}
               isTooltipOpen={isTooltipOpen}
               message={message}
-          />
+            />
           </Route>
           <Route path="/*">
             <NotFound />

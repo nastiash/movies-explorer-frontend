@@ -2,10 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
-
 import profile from "../../images/moviesNavigation/profile.png";
 
-const classNames = require('classnames');
+const classNames = require("classnames");
 
 function MoviesNavigation() {
   const location = useLocation();
@@ -66,12 +65,14 @@ function MoviesNavigation() {
                   </Link>
                 </li>
                 <li className="movies-nav__list-item">
-                <NavLink
+                  <NavLink
                     to="/movies"
                     className={classNames({
                       "movies-nav__link": !isMainPage,
-                      "movies-nav__link movies-nav__link_theme_light": isMainPage,
-                      "movies-nav__link movies-nav__link_place_burger": isBurger
+                      "movies-nav__link movies-nav__link_theme_light":
+                        isMainPage,
+                      "movies-nav__link movies-nav__link_place_burger":
+                        isBurger,
                     })}
                     activeClassName="movies-nav__link_active"
                   >
@@ -83,8 +84,10 @@ function MoviesNavigation() {
                     to="/saved-movies"
                     className={classNames({
                       "movies-nav__link": !isMainPage,
-                      "movies-nav__link movies-nav__link_theme_light": isMainPage,
-                      "movies-nav__link movies-nav__link_place_burger": isBurger
+                      "movies-nav__link movies-nav__link_theme_light":
+                        isMainPage,
+                      "movies-nav__link movies-nav__link_place_burger":
+                        isBurger,
                     })}
                     activeClassName="movies-nav__link_active"
                   >

@@ -21,10 +21,7 @@ function SearchForm({ onSubmit, isOn, handleToggle }) {
 
   return (
     <section className="search">
-      <form
-        className="search__form"
-        onSubmit={handleSubmit}
-      >
+      <form className="search__form" onSubmit={handleSubmit}>
         <div className="search__container">
           <input
             className="search__input"
@@ -32,16 +29,13 @@ function SearchForm({ onSubmit, isOn, handleToggle }) {
             type="text"
             minLength="3"
             value={value}
-            onChange={handleChange}>
-          </input>
+            onChange={handleChange}
+          ></input>
           <button className="search__button" type="submit">
             Поиск
           </button>
         </div>
-        <FilterCheckBox
-          isOn={isOn}
-          handleToggle={handleToggle}
-          />
+        <FilterCheckBox isOn={isOn} handleToggle={handleToggle} />
       </form>
     </section>
   );

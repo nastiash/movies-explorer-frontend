@@ -1,7 +1,14 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-function Form({ name, children, onSubmit, noValidate, isTooltipOpen, message }) {
+function Form({
+  name,
+  children,
+  onSubmit,
+  noValidate,
+  isTooltipOpen,
+  message,
+}) {
   const location = useLocation();
 
   const isProfilePage = location.pathname === "/profile";
@@ -11,7 +18,8 @@ function Form({ name, children, onSubmit, noValidate, isTooltipOpen, message }) 
   return (
     <>
       {isProfilePage && (
-        <form className="form form_type_profile"
+        <form
+          className="form form_type_profile"
           name={name}
           onSubmit={onSubmit}
           noValidate={noValidate}
@@ -20,7 +28,8 @@ function Form({ name, children, onSubmit, noValidate, isTooltipOpen, message }) 
         </form>
       )}
       {isRegisterPage && (
-        <form className="form form_type_auth"
+        <form
+          className="form form_type_auth"
           name={name}
           onSubmit={onSubmit}
           noValidate={noValidate}
@@ -29,7 +38,8 @@ function Form({ name, children, onSubmit, noValidate, isTooltipOpen, message }) 
         </form>
       )}
       {isLoginPage && (
-        <form className="form form_type_auth"
+        <form
+          className="form form_type_auth"
           name={name}
           onSubmit={onSubmit}
           noValidate={noValidate}

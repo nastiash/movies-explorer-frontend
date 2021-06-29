@@ -28,12 +28,10 @@ export const checkSavedMovies = (movies, savedMovies) => {
 export const searchMovie = (movies, value) =>
   movies.filter((movie) => {
     return movie.nameRU.toLowerCase().includes(value.toLowerCase());
-});
+  });
 
 export const filterMovies = (movies, checked) => {
-  return movies.filter((movie) =>
-    checked ? movie.duration <= 40 : Number
-  );
+  return movies.filter((movie) => (checked ? movie.duration <= 40 : Number));
 };
 
 export const getMoviesCount = () => {
@@ -60,12 +58,12 @@ export const getErrors = (err) => {
   if (err === "Ошибка: 401" || err.message === "Ошибка: 401")
     return "Неправильные почта или пароль";
   if (err === "Ошибка: 403" || err.message === "Ошибка: 403")
-    return "Вы не можете удалить фильм";
+    return "Недостаточно прав";
   if (err === "Ошибка: 404" || err.message === "Ошибка: 404")
     return "Данные не найдены";
   if (err === "Ошибка: 409" || err.message === "Ошибка: 409")
-    return "Пользователь с таким email уже существует";
+    return "Пользователь с данным email уже существует";
   if (err === "Ошибка: 429" || err.message === "Ошибка: 429")
-    return "Слишком много запросов. Попробуйте позже";
+    return "Превышен лимит запросов. Попробуйте позже";
   return "Ошибка сервера";
 };

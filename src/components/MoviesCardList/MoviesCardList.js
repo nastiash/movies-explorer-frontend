@@ -3,7 +3,13 @@ import React from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import * as utils from "../../utils/utils";
 
-function MoviesCardList({ movies, moreButton,  onMoreButton, onMovieClick, searchError}) {
+function MoviesCardList({
+  movies,
+  moreButton,
+  onMoreButton,
+  onMovieClick,
+  searchError,
+}) {
   console.log(movies);
 
   const moviesVisible = movies.length > 0;
@@ -13,7 +19,7 @@ function MoviesCardList({ movies, moreButton,  onMoreButton, onMovieClick, searc
       {!moviesVisible && <p className="cards__message">{searchError}</p>}
 
       {moviesVisible && (
-      <ul className="cards__list">
+        <ul className="cards__list">
           {movies.map((movie) => (
             <MoviesCard
               key={utils.getMovieKey(movie)}
@@ -24,16 +30,13 @@ function MoviesCardList({ movies, moreButton,  onMoreButton, onMovieClick, searc
         </ul>
       )}
       {moreButton && (
-      <div className="cards__button-container">
-        {moreButton && (
-          <button
-            className="cards__more-button"
-            onClick={onMoreButton}
-          >
-            Ещё
-          </button>
-        )}
-      </div>
+        <div className="cards__button-container">
+          {moreButton && (
+            <button className="cards__more-button" onClick={onMoreButton}>
+              Ещё
+            </button>
+          )}
+        </div>
       )}
     </section>
   );

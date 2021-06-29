@@ -7,15 +7,14 @@ function AuthFormButton({ isValid }) {
   const isRegisterPage = location.pathname === "/signup";
   const isLoginPage = location.pathname === "/signin";
 
-
-
-
   return (
     <>
       {isRegisterPage && (
         <div className="button__container button__container_type_register">
           <button
-            className={`button button_type_signup ${isValid ? "button_disabled" : ""}`}
+            className={`button button_type_signup ${
+              isValid ? "button_disabled" : ""
+            }`}
             type="submit"
             disabled={isValid}
           >
@@ -33,7 +32,9 @@ function AuthFormButton({ isValid }) {
       {isLoginPage && (
         <div className="button__container button__container_type_login">
           <button
-            className={`button button_type_signin ${isValid ? "button_disabled" : ""}`}
+            className={`button button_type_signin ${
+              isValid ? "button_disabled" : ""
+            }`}
             type="submit"
             disabled={isValid}
           >

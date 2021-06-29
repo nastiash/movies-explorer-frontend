@@ -7,7 +7,7 @@ import Form from "../Form/Form";
 import Input from "../Input/Input";
 
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { useValidation } from '../../utils/formValidation';
+import { useValidation } from "../../utils/formValidation";
 
 function Profile({ onSignOut, onUpdate }, loggedIn) {
   const [isSubmitButtonActive, setSubmitButtonActive] = useState(false);
@@ -15,7 +15,6 @@ function Profile({ onSignOut, onUpdate }, loggedIn) {
   const currentUser = React.useContext(CurrentUserContext);
 
   const { values, setValues, errors, isValid, handleChange } = useValidation();
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,18 +28,12 @@ function Profile({ onSignOut, onUpdate }, loggedIn) {
     setValues(currentUser);
   }, [currentUser, setValues]);
 
-   return (
+  return (
     <>
       <Header loggedIn={loggedIn} />
       <section className="profile">
-        <Greeting
-          loggedIn={true}
-          greeting={`Привет, ${currentUser.name}!`}
-        />
-        <Form name="profile"
-          onSubmit={handleSubmit}
-          noValidate
-        >
+        <Greeting loggedIn={true} greeting={`Привет, ${currentUser.name}!`} />
+        <Form name="profile" onSubmit={handleSubmit} noValidate>
           <Input
             formStyle="profile"
             id="name"
@@ -52,7 +45,7 @@ function Profile({ onSignOut, onUpdate }, loggedIn) {
             placeholder="Имя"
             minLength="2"
             maxLength="30"
-            regexp='[a-zA-Z -]{2,30}'
+            regexp="[a-zA-Z -]{2,30}"
             value={values.name || ""}
             error={errors.name}
             onChange={handleChange}

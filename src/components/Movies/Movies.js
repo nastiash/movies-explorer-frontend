@@ -8,7 +8,10 @@ import Preloader from "../Preloader/Preloader";
 
 import * as utils from "../../utils/utils";
 
-function Movies({ movies, onGetMovies, isLoading, onMovieClick, searchError }, loggedIn) {
+function Movies(
+  { movies, onGetMovies, isLoading, onMovieClick, searchError },
+  loggedIn
+) {
   const [searchValue, setSearchValue] = React.useState("");
   const [moviesCount, setMoviesCount] = React.useState(utils.getMoviesCount());
   const [allMovies, setAllMovies] = React.useState([]);
@@ -18,7 +21,7 @@ function Movies({ movies, onGetMovies, isLoading, onMovieClick, searchError }, l
   const handleSubmit = (value) => {
     setSearchValue(value);
     console.log(value);
-    if(!movies.length) {
+    if (!movies.length) {
       onGetMovies();
     }
   };
@@ -40,7 +43,7 @@ function Movies({ movies, onGetMovies, isLoading, onMovieClick, searchError }, l
   }, [movies, searchValue, isSwitchOn, moviesCount]);
 
   React.useEffect(() => {
-    const handleResize= () => {
+    const handleResize = () => {
       setTimeout(() => {
         setMoviesCount(utils.getMoviesCount());
         setCurrentMovies(allMovies.slice(0, utils.getMoviesCount()));
@@ -52,11 +55,7 @@ function Movies({ movies, onGetMovies, isLoading, onMovieClick, searchError }, l
 
   return (
     <>
-      <Header
-        theme={"light"}
-        component={Movies}
-        loggedIn={loggedIn}
-      />
+      <Header theme={"light"} component={Movies} loggedIn={loggedIn} />
       <section className="movies">
         <SearchForm
           onSubmit={handleSubmit}
@@ -71,7 +70,7 @@ function Movies({ movies, onGetMovies, isLoading, onMovieClick, searchError }, l
           isSavedMoviesPage={false}
           onMovieClick={onMovieClick}
           searchError={searchError}
-          />
+        />
       </section>
       <Footer />
     </>

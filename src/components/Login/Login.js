@@ -7,11 +7,11 @@ import Input from "../Input/Input";
 import AuthFormButton from "../AuthFormButton/AuthFormButton";
 import ToolTip from "../ToolTip/ToolTip";
 
-import { useValidation } from '../../utils/formValidation';
+import { useValidation } from "../../utils/formValidation";
 
 import logo from "../../images/logo/logo.svg";
 
-function Login({onLogin, isTooltipOpen, message}) {
+function Login({ onLogin, isTooltipOpen, message }) {
   const loggedIn = false;
   const { values, errors, isValid, handleChange } = useValidation();
 
@@ -25,13 +25,8 @@ function Login({onLogin, isTooltipOpen, message}) {
       <Link to="/" className="login__link">
         <img src={logo} alt="логотип" className="login__logo"></img>
       </Link>
-      <Greeting greeting="Рады видеть!"
-        loggedIn={loggedIn}
-      />
-      <Form name="login"
-        onSubmit={handleSubmit}
-        noValidate
-      >
+      <Greeting greeting="Рады видеть!" loggedIn={loggedIn} />
+      <Form name="login" onSubmit={handleSubmit} noValidate>
         <Input
           formStyle="login"
           id="email"
@@ -61,13 +56,8 @@ function Login({onLogin, isTooltipOpen, message}) {
           error={errors.password}
           onChange={handleChange}
         />
-        <ToolTip
-          isOpen={isTooltipOpen}
-          message={message}
-        />
-        <AuthFormButton
-          isValid={!isValid}
-        />
+        <ToolTip isOpen={isTooltipOpen} message={message} />
+        <AuthFormButton isValid={!isValid} />
       </Form>
     </section>
   );

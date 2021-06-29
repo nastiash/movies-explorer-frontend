@@ -22,7 +22,7 @@ class MainApi {
         Authorization: `Bearer ${token}`,
       },
     }).then((res) => this._getResponse(res));
-  };
+  }
 
   register(name, email, password) {
     return fetch(`${MAIN_URL}/signup`, {
@@ -33,7 +33,7 @@ class MainApi {
       },
       body: JSON.stringify({ name, email, password }),
     }).then((res) => this._getResponse(res));
-  };
+  }
 
   authorize(email, password) {
     return fetch(`${MAIN_URL}/signin`, {
@@ -44,7 +44,7 @@ class MainApi {
       },
       body: JSON.stringify({ email, password }),
     }).then((res) => this._getResponse(res));
-  };
+  }
 
   getUserInfo(token) {
     return fetch(`${this.url}/users/me`, {

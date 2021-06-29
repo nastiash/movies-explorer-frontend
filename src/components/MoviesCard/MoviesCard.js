@@ -30,13 +30,15 @@ function MoviesCard({ movie, onMovieClick }) {
           rel="noreferrer"
           href={movie.trailer || movie.trailerLink}
         >
-          <img className="card__image" src={utils.getMovieImage(movie)} alt={movie.nameRU}></img>
+          <img
+            className="card__image"
+            src={utils.getMovieImage(movie)}
+            alt={movie.nameRU}
+          ></img>
         </a>
         <div className="card__caption-container">
           <h3 className="card__title">{movie.nameRU}</h3>
-          <button
-            className="card__button"
-            onClick={handleMovieClick}>
+          <button className="card__button" onClick={handleMovieClick}>
             {isMoviesPage && !movie.isSaved && saveMovie}
             {isMoviesPage && movie.isSaved && savedMovie}
             {isSavedMoviesPage && deleteMovie}

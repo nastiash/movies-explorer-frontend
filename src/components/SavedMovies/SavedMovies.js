@@ -30,21 +30,23 @@ function SavedMovies({ savedMovies, onMovieClick }, loggedIn) {
   return (
     <>
       <Header loggedIn={loggedIn} />
-        <section className="saved-movies">
-      <SearchForm
+      <section className="saved-movies">
+        <SearchForm
           onSubmit={handleSubmit}
           isOn={isSwitchOn}
           handleToggle={handleToggleSwitch}
-      />
-      <MoviesCardList
+        />
+        <MoviesCardList
           isSavedMoviesPage={true}
           movies={movies}
           moreButton={false}
           onMovieClick={onMovieClick}
           searchError={
-            savedMovies.length < 1 ? "Нет сохраненных фильмов" : "Фильмы не найдены"
+            savedMovies.length < 1
+              ? "Нет сохраненных фильмов"
+              : "Фильмы не найдены"
           }
-      />
+        />
       </section>
       <Footer />
     </>

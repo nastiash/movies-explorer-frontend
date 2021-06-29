@@ -19,8 +19,8 @@ function Header() {
         <Link to="/" className="header__logo-link">
           <img className="header__logo" src={logo} alt="логотип"></img>
         </Link>
-        {currentUser.email && <MoviesNavigation /> }
-        {!currentUser.email && <Navigation /> }
+        {currentUser.email && <MoviesNavigation />}
+        {!currentUser.email && <Navigation />}
       </div>
     </header>
   );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export const useValidation = () => {
   const [isValid, setIsValid] = useState(false);
@@ -24,6 +24,6 @@ export const useValidation = () => {
     setValues,
     errors,
     isValid,
-    handleChange
+    handleChange,
   };
 };

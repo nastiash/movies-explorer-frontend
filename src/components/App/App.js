@@ -89,10 +89,10 @@ function App() {
   function handleSignOut(event) {
     event.preventDefault();
      setLoggedIn(false);
-    setCurrentUser({});
-    setSavedMovies([]);
-    localStorage.clear();
-    history.push("/");
+      setCurrentUser({});
+      setSavedMovies([]);
+      localStorage.clear();
+      history.push("/");
   }
 
   function handleSaveMovie(movie) {
@@ -137,9 +137,10 @@ function App() {
     setIsLoading(true);
     moviesApi
       .getMovies()
-      .then((movies) => {
-        localStorage.setItem("all-movies", JSON.stringify(movies));
-        setMovies(utils.checkSavedMovies(movies, savedMovies));
+      .then((moviesData) => {
+        localStorage.setItem("all-movies", JSON.stringify(moviesData));
+        setMovies(utils.checkSavedMovies(moviesData, savedMovies));
+        console.log(moviesData);
         setSearchError("Фильмы не найдены");
       })
       .catch((err) => {
@@ -205,31 +206,24 @@ function App() {
       setMovies(utils.checkSavedMovies(allMovies, savedMovies));
       setSearchError("Фильмы не найдены");
     } else {
-      setSearchError(
-        "Начните поиск - введите название фильма в строку поиска!"
-      );
       setMovies([]);
     }
   }, [savedMovies]);
 
   React.useEffect(() => {
-    const moviesFounded = utils.searchMovie(movies, searchValue);
-    const moviesFiltered = utils.filterMovies(moviesFounded, isSwitchOn);
+    console.log(searchValue);
+      if (searchValue.length === 0) {
+        setSearchError("Начните поиск - введите название фильма в строку поиска!")
+      } else {
+        const moviesFounded = utils.searchMovie(movies, searchValue);
+        const moviesFiltered = utils.filterMovies(moviesFounded, isSwitchOn);
+        console.log(moviesFounded);
 
-    setAllMovies(moviesFiltered);
-    setCurrentMovies(moviesFiltered.slice(0, moviesCount));
+        setAllMovies(moviesFiltered);
+        setCurrentMovies(moviesFiltered.slice(0, moviesCount));
+    }
   }, [movies, searchValue, isSwitchOn, moviesCount]);
 
-  React.useEffect(() => {
-    const handleResize = () => {
-      setTimeout(() => {
-        setMoviesCount(utils.getMoviesCount());
-        setCurrentMovies(allMovies.slice(0, utils.getMoviesCount()));
-      }, 1000);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [allMovies]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

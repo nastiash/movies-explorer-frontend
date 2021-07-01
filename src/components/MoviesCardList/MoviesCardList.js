@@ -10,7 +10,6 @@ function MoviesCardList({
   onMovieClick,
   searchError,
 }) {
-  console.log(movies);
 
   const moviesVisible = movies.length > 0;
 

@@ -18,8 +18,11 @@ export const getMovieDuration = (movie) => {
 };
 
 export const checkSavedMovies = (movies, savedMovies) => {
+  console.log(movies);
+  console.log(savedMovies);
   savedMovies.forEach((savedMovie) => {
     const movie = movies.find((item) => item.nameRU === savedMovie.nameRU);
+    console.log(movie);
     movie.isSaved = true;
   });
   return movies;
@@ -36,9 +39,11 @@ export const filterMovies = (movies, checked) => {
 
 export const getMoviesCount = () => {
   switch (true) {
-    case window.innerWidth >= 1280:
+    case window.innerWidth >= 1260:
       return 12;
-    case window.innerWidth >= 768:
+    case window.innerWidth >= 1100:
+      return 9;
+    case window.innerWidth >= 600:
       return 8;
     default:
       return 5;

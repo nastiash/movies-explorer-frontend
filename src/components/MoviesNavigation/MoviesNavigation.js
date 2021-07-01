@@ -25,8 +25,6 @@ function MoviesNavigation() {
     }
   }, []);
 
-  console.log(isBurger);
-
   return (
     <nav className="movies-nav">
       <button

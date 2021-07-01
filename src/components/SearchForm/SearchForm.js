@@ -27,7 +27,6 @@ function SearchForm({ onSubmit, isOn, handleToggle }) {
             className="search__input"
             placeholder="Фильм"
             type="text"
-            minLength="3"
             value={value}
             onChange={handleChange}
           ></input>

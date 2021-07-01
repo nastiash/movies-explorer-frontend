@@ -5,11 +5,12 @@ import Header from "../Header/Header";
 import Greeting from "../Greeting/Greeting";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
+import ToolTip from "../ToolTip/ToolTip";
 
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useValidation } from "../../utils/formValidation";
 
-function Profile({ onSignOut, onUpdate }, loggedIn) {
+function Profile({ onSignOut, onUpdate, isTooltipOpen, message }, loggedIn) {
 
   const currentUser = React.useContext(CurrentUserContext);
 
@@ -65,6 +66,7 @@ function Profile({ onSignOut, onUpdate }, loggedIn) {
             onChange={handleChange}
           />
           <div className="profile__container">
+          <ToolTip isOpen={isTooltipOpen} message={message} />
             <button
               type="button"
               className={`profile__button ${

@@ -27,6 +27,13 @@ function App() {
   const [message, setMessage] = React.useState("");
   const [isTooltipOpen, setToolTipOpen] = React.useState(false);
 
+  const [isSwitchOn, setSwitchOn] = React.useState(false);
+  const [moviesCount, setMoviesCount] = React.useState(utils.getMoviesCount());
+  const [searchValue, setSearchValue] = React.useState("");
+  const [allMovies, setAllMovies] = React.useState([]);
+  const [currentMovies, setCurrentMovies] = React.useState([]);
+
+
   const history = useHistory();
   const location = useLocation();
   const path = location.pathname;
@@ -47,7 +54,6 @@ function App() {
   };
 
   function handleRegister(name, email, password) {
-    //console.log(name, email, password);
     mainApi
       .register(name, email, password)
       .then((res) => {
@@ -68,6 +74,8 @@ function App() {
       .then((data) => {
         if (data) {
           setCurrentUser(data);
+          setToolTipOpen(true);
+          setMessage("Данные успешно изменены!");
         }
       })
       .catch((err) => {
@@ -77,35 +85,10 @@ function App() {
       });
   }
 
-  function closeToolTip() {
-    setToolTipOpen(false);
-  }
-
-  function handlerEscClose(event) {
-    if (event.key === "Escape") {
-      closeToolTip();
-    }
-  }
-
-  function closeByOverlay(event) {
-    if (event.target.classList.contains("tooltip")) {
-      closeToolTip();
-    }
-  }
-
-  React.useEffect(() => {
-    document.addEventListener("keydown", handlerEscClose);
-    document.addEventListener("click", closeByOverlay);
-    return () => {
-      document.removeEventListener("keydown", handlerEscClose);
-      document.removeEventListener("click", closeByOverlay);
-    };
-  });
 
   function handleSignOut(event) {
     event.preventDefault();
-    closeToolTip();
-    setLoggedIn(false);
+     setLoggedIn(false);
     setCurrentUser({});
     setSavedMovies([]);
     localStorage.clear();
@@ -168,6 +151,21 @@ function App() {
       });
   }
 
+  const handleSearchSubmit = (value) => {
+    setSearchValue(value);
+    if (!movies.length) {
+      getMoviesInfo();
+    }
+  };
+
+  const handleMoreButton = () => {
+    setMoviesCount(moviesCount + utils.loadMovies());
+  };
+
+  const handleToggleSwitch = () => {
+    setSwitchOn(!isSwitchOn);
+  };
+
   React.useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -204,7 +202,6 @@ function App() {
   React.useEffect(() => {
     const allMovies = JSON.parse(localStorage.getItem("all-movies"));
     if (allMovies) {
-      console.log(allMovies);
       setMovies(utils.checkSavedMovies(allMovies, savedMovies));
       setSearchError("Фильмы не найдены");
     } else {
@@ -214,6 +211,25 @@ function App() {
       setMovies([]);
     }
   }, [savedMovies]);
+
+  React.useEffect(() => {
+    const moviesFounded = utils.searchMovie(movies, searchValue);
+    const moviesFiltered = utils.filterMovies(moviesFounded, isSwitchOn);
+
+    setAllMovies(moviesFiltered);
+    setCurrentMovies(moviesFiltered.slice(0, moviesCount));
+  }, [movies, searchValue, isSwitchOn, moviesCount]);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setTimeout(() => {
+        setMoviesCount(utils.getMoviesCount());
+        setCurrentMovies(allMovies.slice(0, utils.getMoviesCount()));
+      }, 1000);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [allMovies]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -228,10 +244,16 @@ function App() {
             loggedIn={loggedIn}
             redirect="/"
             movies={movies}
+            currentMovies={currentMovies}
+            allMovies={allMovies}
             onGetMovies={getMoviesInfo}
             onMovieClick={handleMovieClick}
             isLoading={isLoading}
             searchError={searchError}
+            handleMoreButton={handleMoreButton}
+            handleToggleSwitch={handleToggleSwitch}
+            handleSearchSubmit={handleSearchSubmit}
+            isSwitchOn={isSwitchOn}
           />
           <ProtectedRoute
             path="/saved-movies"

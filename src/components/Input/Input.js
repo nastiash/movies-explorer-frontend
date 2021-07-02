@@ -13,6 +13,7 @@ function Input({
   maxLength,
   value,
   error,
+  onChange,
 }) {
   const location = useLocation();
 
@@ -47,8 +48,9 @@ function Input({
             placeholder={placeholder}
             minLength={minLength}
             maxLength={maxLength}
-            value={value}
+            value={value || ""}
             error={error}
+            onChange={onChange}
           />
         </div>
       )}
@@ -74,8 +76,9 @@ function Input({
             placeholder={placeholder}
             minLength={minLength}
             maxLength={maxLength}
-            value={value}
+            value={value || ""}
             error={error}
+            onChange={onChange}
           />
         </div>
       )}
@@ -101,11 +104,13 @@ function Input({
             placeholder={placeholder}
             minLength={minLength}
             maxLength={maxLength}
-            value={value}
+            value={value || ""}
             error={error}
+            onChange={onChange}
           />
         </div>
       )}
+      {error && <span className="input__error-message">{error}</span>}
     </>
   );
 }

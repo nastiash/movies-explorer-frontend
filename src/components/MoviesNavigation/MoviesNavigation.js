@@ -4,8 +4,12 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 
 import profile from "../../images/moviesNavigation/profile.png";
 
+const classNames = require("classnames");
+
 function MoviesNavigation() {
   const location = useLocation();
+
+  const [isBurger, setIsBurger] = React.useState(false);
 
   const isMainPage = location.pathname === "/";
 
@@ -14,6 +18,12 @@ function MoviesNavigation() {
   function toggleMenu() {
     setShowMenu(!showMenu);
   }
+
+  React.useEffect(() => {
+    if (window.innerWidth <= 1000) {
+      setIsBurger(true);
+    }
+  }, []);
 
   return (
     <nav className="movies-nav">
@@ -55,9 +65,13 @@ function MoviesNavigation() {
                 <li className="movies-nav__list-item">
                   <NavLink
                     to="/movies"
-                    className={`movies-nav__link ${
-                      !isMainPage ? "" : "movies-nav__link_theme_light"
-                    }`}
+                    className={classNames({
+                      "movies-nav__link": !isMainPage,
+                      "movies-nav__link movies-nav__link_theme_light":
+                        isMainPage,
+                      "movies-nav__link movies-nav__link_place_burger":
+                        isBurger,
+                    })}
                     activeClassName="movies-nav__link_active"
                   >
                     Фильмы
@@ -66,9 +80,13 @@ function MoviesNavigation() {
                 <li className="movies-nav__list-item">
                   <NavLink
                     to="/saved-movies"
-                    className={`movies-nav__link ${
-                      !isMainPage ? "" : "movies-nav__link_theme_light"
-                    }`}
+                    className={classNames({
+                      "movies-nav__link": !isMainPage,
+                      "movies-nav__link movies-nav__link_theme_light":
+                        isMainPage,
+                      "movies-nav__link movies-nav__link_place_burger":
+                        isBurger,
+                    })}
                     activeClassName="movies-nav__link_active"
                   >
                     Сохранённые фильмы

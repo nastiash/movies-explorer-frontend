@@ -3,11 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 
 import Navigation from "../Navigation/Navigation";
 import MoviesNavigation from "../MoviesNavigation/MoviesNavigation";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 import logo from "../../images/logo/logo.svg";
 
-function Header(props) {
+function Header() {
   const location = useLocation();
+  const currentUser = React.useContext(CurrentUserContext);
 
   const isMainPage = location.pathname === "/";
 
@@ -17,7 +19,8 @@ function Header(props) {
         <Link to="/" className="header__logo-link">
           <img className="header__logo" src={logo} alt="логотип"></img>
         </Link>
-        {props.loggedIn ? <MoviesNavigation /> : <Navigation />}
+        {currentUser.email && <MoviesNavigation />}
+        {!currentUser.email && <Navigation />}
       </div>
     </header>
   );

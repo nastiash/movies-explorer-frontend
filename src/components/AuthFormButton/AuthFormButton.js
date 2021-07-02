@@ -1,7 +1,7 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
-function AuthFormButton() {
+function AuthFormButton({ isValid }) {
   const location = useLocation();
 
   const isRegisterPage = location.pathname === "/signup";
@@ -11,29 +11,41 @@ function AuthFormButton() {
     <>
       {isRegisterPage && (
         <div className="button__container button__container_type_register">
-          <button type="button button_type_signup" className="button">
+          <button
+            className={`button button_type_signup ${
+              isValid ? "button_disabled" : ""
+            }`}
+            type="submit"
+            disabled={isValid}
+          >
             Зарегистрироваться
           </button>
-          <p class="button__comment">
+          <p className="button__comment">
             Уже зарегистрированы?
-            <a class="button__link" href="/signin">
+            <Link to="/signin" className="button__link">
               {" "}
               Войти
-            </a>
+            </Link>
           </p>
         </div>
       )}
       {isLoginPage && (
         <div className="button__container button__container_type_login">
-          <button type="button button_type_signin" className="button">
+          <button
+            className={`button button_type_signin ${
+              isValid ? "button_disabled" : ""
+            }`}
+            type="submit"
+            disabled={isValid}
+          >
             Войти
           </button>
-          <p class="button__comment">
+          <p className="button__comment">
             Еще не зарегистрированы?
-            <a class="button__link" href="/signup">
+            <Link to="/signup" className="button__link">
               {" "}
               Регистрация
-            </a>
+            </Link>
           </p>
         </div>
       )}

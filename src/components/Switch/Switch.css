@@ -1,0 +1,35 @@
+.switch {
+
+}
+
+.switch {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.switch__label {
+  width: 36px;
+  height: 20px;
+  margin-right: 14px;
+  position: relative;
+  cursor: pointer;
+  background-image: url(../../images/filterCheckBox/checkbox_disable.png);
+}
+
+.switch__label_enabled {
+  background-image: url(../../images/filterCheckBox/checkbox_enable.png)
+}
+
+.switch__button {
+  width: 36px;
+  height: 20px;
+  position: absolute;
+}
+
+.switch:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}

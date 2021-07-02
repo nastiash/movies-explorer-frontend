@@ -10,7 +10,7 @@ import Footer from "../Footer/Footer";
 function Main() {
   return (
     <>
-      <Header theme={"dark"} component={Main} />
+      <Header theme={"dark"} />
       <main className="main">
         <Promo />
         <AboutProject />
